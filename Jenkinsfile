@@ -40,4 +40,7 @@ pipeline {
             )
         }
     }
+     mail to: 'utm19020134@utma.edu.mx',
+         subject: "Pipeline '${env.JOB_NAME}' (${env.BUILD_NUMBER}) - ${currentBuild.currentResult}",
+         body: "Revisa los detalles en ${env.BUILD_URL}"
 }
